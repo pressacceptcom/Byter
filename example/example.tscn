@@ -1,0 +1,207 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/PressAccept/Byter/example/Base36.gd" type="Script" id=1]
+[ext_resource path="res://addons/PressAccept/Byter/example/Hexadecimal.gd" type="Script" id=2]
+[ext_resource path="res://addons/PressAccept/Byter/example/Arbitrary.gd" type="Script" id=3]
+[ext_resource path="res://addons/PressAccept/Byter/example/Base62.gd" type="Script" id=4]
+[ext_resource path="res://addons/PressAccept/Byter/example/Binary.gd" type="Script" id=5]
+[ext_resource path="res://addons/PressAccept/Byter/example/Octal.gd" type="Script" id=6]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends TextEdit
+
+
+# Declare member variables here. Examples:
+# var a: int = 2
+# var b: String = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+#	pass
+"
+
+[node name="vBoxContainer" type="VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DecimalLabel" type="RichTextLabel" parent="."]
+margin_right = 1280.0
+margin_bottom = 15.0
+text = "Decimal"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Decimal" type="TextEdit" parent="."]
+margin_top = 19.0
+margin_right = 1280.0
+margin_bottom = 86.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+caret_block_mode = true
+caret_blink = true
+script = SubResource( 1 )
+
+[node name="BinaryLabel" type="RichTextLabel" parent="."]
+margin_top = 90.0
+margin_right = 1280.0
+margin_bottom = 105.0
+text = "Binary"
+fit_content_height = true
+
+[node name="Binary" type="TextEdit" parent="."]
+margin_top = 109.0
+margin_right = 1280.0
+margin_bottom = 177.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+readonly = true
+script = ExtResource( 5 )
+
+[node name="OctalLabel" type="RichTextLabel" parent="."]
+margin_top = 181.0
+margin_right = 1280.0
+margin_bottom = 196.0
+text = "Octal"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Octal" type="TextEdit" parent="."]
+margin_top = 200.0
+margin_right = 1280.0
+margin_bottom = 267.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+readonly = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HexadecimalLabel" type="RichTextLabel" parent="."]
+margin_top = 271.0
+margin_right = 1280.0
+margin_bottom = 286.0
+text = "Hexadecimal"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hexadecimal" type="TextEdit" parent="."]
+margin_top = 290.0
+margin_right = 1280.0
+margin_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+readonly = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base36Label" type="RichTextLabel" parent="."]
+margin_top = 362.0
+margin_right = 1280.0
+margin_bottom = 377.0
+text = "Base 36"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base36" type="TextEdit" parent="."]
+margin_top = 381.0
+margin_right = 1280.0
+margin_bottom = 448.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+readonly = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base62Label" type="RichTextLabel" parent="."]
+margin_top = 452.0
+margin_right = 1280.0
+margin_bottom = 467.0
+text = "Base 62"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base62" type="TextEdit" parent="."]
+margin_top = 471.0
+margin_right = 1280.0
+margin_bottom = 539.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+readonly = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArbitraryBaseLabel" type="RichTextLabel" parent="."]
+margin_top = 543.0
+margin_right = 1280.0
+margin_bottom = 558.0
+text = "Arbitrary Base String"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArbitraryBase" type="TextEdit" parent="."]
+margin_top = 562.0
+margin_right = 1280.0
+margin_bottom = 629.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArbitraryLabel" type="RichTextLabel" parent="."]
+margin_top = 633.0
+margin_right = 1280.0
+margin_bottom = 648.0
+text = "Arbitrary Base"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arbitrary" type="TextEdit" parent="."]
+margin_top = 652.0
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+readonly = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_changed" from="Decimal" to="Base62" method="_on_Decimal_text_changed"]
+[connection signal="text_changed" from="Decimal" to="Arbitrary" method="_on_text_changed"]
+[connection signal="text_changed" from="Decimal" to="Hexadecimal" method="_on_Decimal_text_changed"]
+[connection signal="text_changed" from="Decimal" to="Base36" method="_on_Decimal_text_changed"]
+[connection signal="text_changed" from="Decimal" to="Octal" method="_on_Decimal_text_changed"]
+[connection signal="text_changed" from="Decimal" to="Binary" method="_on_Decimal_text_changed"]
+[connection signal="text_changed" from="ArbitraryBase" to="Arbitrary" method="_on_text_changed"]
