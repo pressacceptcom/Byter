@@ -56,17 +56,17 @@ Class: ArbitraryBase, Base36, Base62, Binary, Byter, Formats, Hexadecimal, Octal
 
 Organization - Press Accept
 
-Organization URI - [https://pressaccept.com/]
+Organization URI - https://pressaccept.com/
 
-Organization Social - [@pressacceptcom]
+Organization Social - [@pressacceptcom](https://twitter.com/pressacceptcom)
 
 #### Author Information
 
 Author - Asher Kadar Wolfstein
 
-Author URI - [https://wunk.me/]
+Author URI - https://wunk.me/
 
-Author Social - [https://incarnate.me/members/asherwolfstein/], [@asherwolfstein] (Twitter)
+Author Social - https://incarnate.me/members/asherwolfstein/, [@asherwolfstein](https://twitter.com/asherwolfstein)
 
 #### Copyright And License
 
