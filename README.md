@@ -3,7 +3,7 @@
 
 This library has basic functions and algorithms for converting between various radii, (radixes) including binary, decimal, octal, hexadecimal, base 36 \[0-9a-z\], base 62 \[0-9a-zA-Z\], and arbitrary bases (place values defined by a string). These functions are binary consistent, and can operate with 2s-complement negative numbers. With help from the Arbiter library, values can grow beyond the limitations of the signed 64-bit integer type built-in to Godot (large integers are represented in decimal using a string).
 
-There is also a Byter class that can be instantiated with which you can set the internal value through the varioud radix conduits, and then retrieve the equivalent value as a property (or thorugh a method call) in another radix.
+There is also a Byter class that can be instantiated with which you can set the internal value through the varioud radix conduits, and then retrieve the equivalent value as a property (or through a method call) in another radix.
 
 This library requires Arbiter 1.1 and above (1.0 is missing required functionality)
 
