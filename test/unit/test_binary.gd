@@ -92,7 +92,7 @@ func test_del_whitespace() -> void:
 			}
 	}
 
-	TestUtilities.batch(self, tests, funcref(Binary, 'enforce_binary'))
+	TestUtilities.batch(self, tests, funcref(Binary, 'del_whitespace'))
 
 
 func test_enforce_binary() -> void:
