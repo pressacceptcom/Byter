@@ -73,18 +73,18 @@ signal value_changed    (new_decimal_value, old_decimal_value, emitter)
 # ***********
 
 # arbitrary precision arithmetic, instance used for internal value
-var Basic: Script = PressAccept_Arbiter_Basic
+const Basic: Script = PressAccept_Arbiter_Basic
 
 # import formats enumeration
-var Formats      : Script     = PressAccept_Byter_Formats
-var ENUM_FORMATS : Dictionary = Formats.ENUM_FORMATS
+const Formats      : Script     = PressAccept_Byter_Formats
+const ENUM_FORMATS : Dictionary = Formats.ENUM_FORMATS
 
 # import 'arbitrary radix' conversion modules
-var Binary      : Script = PressAccept_Byter_Binary
-var Octal       : Script = PressAccept_Byter_Octal
-var Hexadecimal : Script = PressAccept_Byter_Hexadecimal
-var Base36      : Script = PressAccept_Byter_Base36
-var Base62      : Script = PressAccept_Byter_Base62
+const Binary      : Script = PressAccept_Byter_Binary
+const Octal       : Script = PressAccept_Byter_Octal
+const Hexadecimal : Script = PressAccept_Byter_Hexadecimal
+const Base36      : Script = PressAccept_Byter_Base36
+const Base62      : Script = PressAccept_Byter_Base62
 
 # ****************
 # | Enumerations |
