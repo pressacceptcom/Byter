@@ -45,10 +45,9 @@ extends TextEdit
 # ***********
 
 # arbitrary integer arithmetic/representation (used for parsing decimal)
-const Basic     : Script = PressAccept_Arbiter_Basic
-
+var Basic     : Script = PressAccept_Arbiter_Basic
 # conversion module
-const Arbitrary : Script = PressAccept_Byter_ArbitraryBase
+var Arbitrary : Script = PressAccept_Byter_ArbitraryBase
 
 # **********************
 # | Node Relationships |

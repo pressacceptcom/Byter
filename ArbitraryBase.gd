@@ -99,9 +99,8 @@ class_name PressAccept_Byter_ArbitraryBase
 # | Imports |
 # ***********
 
-const Binary: Script = PressAccept_Byter_Binary
-
 var Common: Script = load('res://addons/PressAccept/Byter/Common.gd')
+var Binary: Script = PressAccept_Byter_Binary
 
 # *********************
 # | Public Properties |
