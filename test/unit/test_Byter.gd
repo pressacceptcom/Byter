@@ -139,7 +139,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ str(comparison), str(new_value), byter ]
+		[ str(new_value), str(comparison), byter ]
 	)
 
 	var new_basic: PressAccept_Arbiter_Basic = \
@@ -149,7 +149,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ str(new_value), new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), str(new_value), byter ]
 	)
 
 	var old_value: String = byter.decimal_str
@@ -159,7 +159,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -168,7 +168,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -178,7 +178,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -187,7 +187,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -197,7 +197,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -207,7 +207,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, str(new_value), byter ]
+		[ str(new_value), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -218,7 +218,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -230,7 +230,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -241,7 +241,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -253,7 +253,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -264,7 +264,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -275,7 +275,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -286,7 +286,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 	old_value = byter.decimal_str
@@ -297,7 +297,7 @@ func test_byter_signal_value_changed() -> void:
 	assert_signal_emitted_with_parameters(
 		byter,
 		'value_changed',
-		[ old_value, new_basic.to_decimal(), byter ]
+		[ new_basic.to_decimal(), old_value, byter ]
 	)
 
 

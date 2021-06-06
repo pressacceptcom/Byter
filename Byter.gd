@@ -407,8 +407,8 @@ func set_value(
 		
 		emit_signal(
 			'value_changed',
-			old_decimal_value,
 			value.to_decimal(),
+			old_decimal_value,
 			self
 		)
 	else:
