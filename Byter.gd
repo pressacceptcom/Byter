@@ -60,10 +60,10 @@ class_name PressAccept_Byter_Byter
 # fires when a new output value is calculated
 #
 # is fired once per value calculation since results are cached
-signal calculated_value (output, new_value, emitter)
+signal calculated_value (output,            new_value,         emitter)
 
 # fires when the number of bits to output in binary changes
-signal resized          (new_size_value, old_size_value, emitter)
+signal resized          (new_size_value,    old_size_value,    emitter)
 
 # fires when the internal value of the object changes
 signal value_changed    (new_decimal_value, old_decimal_value, emitter)
