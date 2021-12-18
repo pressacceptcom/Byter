@@ -1,4 +1,5 @@
 tool
+class_name PressAccept_Byter_Common
 
 # |=========================================|
 # |                                         |
@@ -7,7 +8,7 @@ tool
 # |                                         |
 # |=========================================|
 #
-# This file contains functions that are common to a numebr of the modules. This
+# This file contains functions that are common to a number of the modules. This
 # includes an algorithm for converting a given base to an integer given a
 # starter power table, normalizing an input radix for the included function of
 # converting from a given radix input.
@@ -153,24 +154,21 @@ static func to_base(
 					var function: FuncRef = \
 						funcref(base_module, 'str2' + func_suffix)
 					if function:
-						
 						return function.call_func(from_value)
 				ENUM_RADIX.UNSIGNED_BASE_36, ENUM_RADIX.UNSIGNED_BASE_62:
 					var function: FuncRef = \
 						funcref(base_module, 'str2' + func_suffix)
 					if function:
-						
 						return function.call_func(from_value, false)
 				ENUM_RADIX.SIGNED_BASE_36, ENUM_RADIX.SIGNED_BASE_62:
 					var function: FuncRef = \
 						funcref(base_module, 'str2' + func_suffix)
 					if function:
-						
 						return function.call_func(from_value, true)
 
 		TYPE_ARRAY:
-			var function: FuncRef = \
-				funcref(PressAccept_Byter_Binary, 'array2' + func_suffix)
+			var base_module = load('res://addons/PressAccept/Byter/Binary.gd');
+			var function: FuncRef = funcref(base_module, 'array2' + func_suffix)
 			if function:
 				return function.call_func(from_value)
 
