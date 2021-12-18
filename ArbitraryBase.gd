@@ -25,10 +25,10 @@ class_name PressAccept_Byter_ArbitraryBase
 # is simple enough: the first bit is high, and the rest are the inverse of
 # their unsigned counterparts.
 #
-# The conversion functions assume a hexadeimcal stirng input with their output
+# The conversion functions assume a hexadecimal string input with their output
 # specified in the second-half. E.g. str2hexadecimal reads:
 #
-# abirtrary base string input -> hexadecimal string output
+# arbitrary base string input -> hexadecimal string output
 #
 # This namespace contains the following (ordered by output):
 #
@@ -99,7 +99,7 @@ class_name PressAccept_Byter_ArbitraryBase
 # | Imports |
 # ***********
 
-var Common: Script = load('res://addons/PressAccept/Byter/Common.gd')
+var Common: Script = PressAccept_Byter_Common
 var Binary: Script = PressAccept_Byter_Binary
 
 # *********************
@@ -180,7 +180,7 @@ func get_func() -> FuncRef:
 # |----------------------------|
 
 
-# convert am arbitrary base to a binary representation
+# convert an arbitrary base to a binary representation
 func str2binary(
 		base_str : String) -> String:
 
@@ -197,7 +197,7 @@ func str2bin(
 	return str2binary(base_str)
 
 
-# convert an atbirary base string representation to a boolean array
+# convert an arbitrary base string representation to a boolean array
 func str2array(
 		base_str : String) -> Array:
 
@@ -374,7 +374,7 @@ func str2arb(
 
 # convert a positive integer to an arbitrary base string
 #
-# NOTE: does not conver to binary as an intermediary
+# NOTE: does not convert to binary as an intermediary
 func integer2str(
 		int_value) -> String: # int | String
 

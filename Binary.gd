@@ -616,10 +616,6 @@ static func array2hex(
 
 
 # convert boolean string representation to base-36 string
-#
-# pass true to signed to use 2s-complement
-#
-# Test in test_base36.gd
 static func str2base36(
 		binary_str: String) -> String:
 
@@ -636,8 +632,6 @@ static func str2b36(
 
 
 # convert array of boolean values (first->last) to base-36 string
-#
-# pass true to signed to use 2s-complement
 static func array2base36(
 		bool_array: Array) -> String:
 
@@ -652,10 +646,6 @@ static func array2b36(
 
 
 # convert boolean string representation to base-62 string representation
-#
-# pass true to signed to use 2s-complement
-#
-# Test in test_base62.gd
 static func str2base62(
 		binary_str: String) -> String:
 
@@ -672,8 +662,6 @@ static func str2b62(
 
 
 # convert array of boolean values (first->last) to base-62 string
-#
-# pass true to signed to use 2s-complement
 static func array2base62(
 		bool_array: Array) -> String:
 
@@ -688,8 +676,6 @@ static func array2b62(
 
 
 # convert boolean string representation to arbitrary base string
-#
-# pass true to signed to use 2s-complement
 static func str2arbitrary(
 		binary_str : String,
 		from_int   : FuncRef) -> String:
@@ -697,7 +683,7 @@ static func str2arbitrary(
 	return from_int.call_func(str2unsigned(binary_str))
 
 
-# alias for str2base36
+# alias for str2arbitrary
 static func str2arb(
 		binary_str : String,
 		from_int   : FuncRef) -> String:
@@ -705,9 +691,7 @@ static func str2arb(
 	return str2arbitrary(binary_str, from_int)
 
 
-# convert array of bools (first->last) to base-36 string
-#
-# pass true to signed to use 2s-complement
+# convert array of bools (first->last) to arbitrary base string
 static func array2arbitrary(
 		bool_array : Array,
 		from_int   : FuncRef) -> String:
@@ -715,7 +699,7 @@ static func array2arbitrary(
 	return str2arbitrary(array2str(bool_array), from_int)
 
 
-# alias for array2base36
+# alias for array2arbitrary
 static func array2arb(
 		bool_array : Array,
 		from_int   : FuncRef) -> String:
@@ -1139,11 +1123,7 @@ static func to_binary(
 	var ENUM_FORMATS : Dictionary = Formats.ENUM_FORMATS
 	var ENUM_RADIX   : Dictionary = Formats.ENUM_RADIX
 
-	if radix is String:
-		radix = Formats.str2radix(radix)
-
-	if radix < 0:
-		radix = ENUM_RADIX.SIGNED_DECIMAL
+	radix = PressAccept_Byter_Common.normalize_radix(radix)
 
 	if to_value is String:
 		to_value = Formats.str2format(to_value)

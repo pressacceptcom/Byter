@@ -237,9 +237,8 @@ static func str2integer(
 		return_object : bool = false):
 
 	var Basic  : Script = PressAccept_Arbiter_Basic
-	var Common : Script = load('res://addons/PressAccept/Byter/Common.gd')
 
-	return Common.base2integer(
+	return PressAccept_Byter_Common.base2integer(
 		Basic.octal_to_array(octal_str),
 		ARR_POWERS_OF_8,
 		return_object
@@ -393,16 +392,20 @@ static func to_octal(
 		from_value,
 		from_radix = -1) -> String: # radix of from_value, def: signed decimal
 
-	var Myself: Script = load( 'res://addons/PressAccept/Byter/Octal.gd' )
-	var Common: Script = load( 'res://addons/PressAccept/Byter/Common.gd')
+	var Myself: Script = load('res://addons/PressAccept/Byter/Octal.gd')
 
 	var ENUM_RADIX: Dictionary = PressAccept_Byter_Formats.ENUM_RADIX
 
-	from_radix = Common.normalize_radix(from_radix)
+	from_radix = PressAccept_Byter_Common.normalize_radix(from_radix)
 
 	if typeof(from_value) == TYPE_STRING:
 		if from_radix == ENUM_RADIX.OCTAL:
 			return from_value
 
-	return Common.to_base(from_value, Myself, 'octal', from_radix)
+	return PressAccept_Byter_Common.to_base(
+		from_value,
+		Myself,
+		'octal',
+		from_radix
+	)
 

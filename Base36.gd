@@ -15,7 +15,7 @@ class_name PressAccept_Byter_Base36
 # is simple enough: the first bit is high, and the rest are the inverse of
 # their unsigned counterparts.
 #
-# The conversion functions assume a hexadeimcal stirng input with their output
+# The conversion functions assume a hexadecimal string input with their output
 # specified in the second-half. E.g. str2hexadecimal reads:
 #
 # base 36 string input -> hexadecimal string output
@@ -234,15 +234,14 @@ static func str2integer(
 		base36_str    : String,
 		return_object : bool = false):
 
-	var Common: Script = load('res://addons/PressAccept/Byter/Common.gd')
-
 	base36_str = base36_str.to_lower()
 
 	var base36_arr: Array = []
 	for digit in base36_str:
 		base36_arr.push_back(DICT_PLACE_VALUES[digit])
 
-	return Common.base2integer(base36_arr, ARR_POWERS_OF_36, return_object)
+	return PressAccept_Byter_Common.base2integer(
+		base36_arr, ARR_POWERS_OF_36, return_object)
 
 
 # convert base 36 string to a signed integer using 2s-complement (default)
@@ -381,7 +380,7 @@ static func str2arb(
 
 # convert a positive integer to a base 36 string
 #
-# NOTE: does not conver to binary as an intermediary
+# NOTE: does not convert to binary as an intermediary
 static func integer2str(
 		int_value) -> String: # int | String
 
@@ -450,12 +449,10 @@ static func to_base36(
 		from_radix = -1) -> String: # radix of from_value, def: signed decimal
 
 	var Myself: Script = load( 'res://addons/PressAccept/Byter/Base36.gd' )
-	var Common: Script = load( 'res://addons/PressAccept/Byter/Common.gd' )
-	var Base62: Script = load( 'res://addons/PressAccept/Byter/Base62.gd' )
 
 	var ENUM_RADIX: Dictionary = PressAccept_Byter_Formats.ENUM_RADIX
 
-	from_radix = Common.normalize_radix(from_radix)
+	from_radix = PressAccept_Byter_Common.normalize_radix(from_radix)
 
 	if typeof(from_value) == TYPE_STRING:
 		match from_radix:
@@ -464,7 +461,13 @@ static func to_base36(
 				return from_value
 			ENUM_RADIX.UNSIGNED_BASE_62, \
 			ENUM_RADIX.SIGNED_BASE_62:
-				return Base62.str2base36(from_value)
+				return load('res://addons/PressAccept/Byter/Base62.gd') \
+					.str2base36(from_value)
 
-	return Common.to_base(from_value, Myself, 'base36', from_radix)
+	return PressAccept_Byter_Common.to_base(
+		from_value,
+		Myself,
+		'base36',
+		from_radix
+	)
 

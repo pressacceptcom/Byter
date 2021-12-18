@@ -173,8 +173,8 @@ static func str2outputs(
 
 	output_str = output_str.to_upper()
 
-	if output_str in ARR_OUTPUTS:
-		return ARR_OUTPUTS.find(output_str)
+	if output_str in ARR_OPS:
+		return ARR_OPS.find(output_str)
 	return ARR_OUTPUTS.find(output_str)
 
 
@@ -892,8 +892,7 @@ func _on_value_changed(
 
 # set by the given radix (uses enumeration)
 func set_by_radix(
-		new_value,
-		# int | String
+		new_value, # int | String
 		radix = ENUM_OUTPUTS.DECIMAL) -> PressAccept_Byter_Byter:
 
 	if typeof(radix) == TYPE_STRING:

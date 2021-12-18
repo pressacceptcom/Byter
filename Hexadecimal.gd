@@ -244,13 +244,12 @@ static func str2integer(
 		return_object   : bool = false):
 
 	var Basic  : Script = PressAccept_Arbiter_Basic
-	var Common : Script = load('res://addons/PressAccept/Byter/Common.gd')
 
 	# some conventions preface hexadecimal_str numbers with 0x
 	hexadecimal_str = hexadecimal_str.trim_prefix('0x')
 	hexadecimal_str = hexadecimal_str.to_lower()
 
-	return Common.base2integer(
+	return PressAccept_Byter_Common.base2integer(
 		Basic.hexadecimal_to_array(hexadecimal_str),
 		ARR_POWERS_OF_16,
 		return_object
@@ -409,18 +408,20 @@ static func to_hexadecimal(
 		from_value,
 		from_radix = -1) -> String: # radix of from_value, def: signed decimal
 
-	var Myself: Script = \
-		load( 'res://addons/PressAccept/Byter/Hexadecimal.gd' )
-	var Common: Script = \
-		load( 'res://addons/PressAccept/Byter/Common.gd'      )
+	var Myself: Script = load('res://addons/PressAccept/Byter/Hexadecimal.gd')
 
 	var ENUM_RADIX: Dictionary = PressAccept_Byter_Formats.ENUM_RADIX
 
-	from_radix = Common.normalize_radix(from_radix)
+	from_radix = PressAccept_Byter_Common.normalize_radix(from_radix)
 
 	if typeof(from_value) == TYPE_STRING:
 		if from_radix == ENUM_RADIX.HEXADECIMAL:
 			return from_value
 
-	return Common.to_base(from_value, Myself, 'hexadecimal', from_radix)
+	return PressAccept_Byter_Common.to_base(
+		from_value,
+		Myself,
+		'hexadecimal',
+		from_radix
+	)
 
