@@ -15,7 +15,7 @@ class_name PressAccept_Byter_Hexadecimal
 # is simple enough: the first bit is high, and the rest are the inverse of
 # their unsigned counterparts.
 #
-# The conversion functions assume a hexadeimcal stirng input with their output
+# The conversion functions assume a hexadecimal string input with their output
 # specified in the second-half. E.g. str2octal reads:
 #
 # hexadecimal string input -> octal string output

@@ -429,7 +429,7 @@ static func str2arb(
 
 # convert a positive integer to a base 62 string
 #
-# NOTE: does not conver to binary as an intermediary
+# NOTE: does not convert to binary as an intermediary
 static func integer2str(
 		int_value) -> String: # int | String
 
